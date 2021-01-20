@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-require('dotenv').config();
 const express = require('express');
 
 const app = express();
@@ -59,10 +57,8 @@ app.use(
     secret: environment.secret,
     algorithms: ['HS256'],
     getToken: (req) => {
-      // eslint-disable-next-line prettier/prettier
       if (req.headers.authorization && req.headers.authorization.split(' ')[0] === 'Bearer') {
         return req.headers.authorization.split(' ')[1];
-        // eslint-disable-next-line no-else-return
       } else if (req.query && req.query.token) {
         return req.query.token;
       }
