@@ -11,6 +11,7 @@ export class JwtInterceptor implements HttpInterceptor {
       if (currentUser && currentUser.token) {
         request = request.clone({
           setHeaders: {
+            // eslint-disable-next-line @typescript-eslint/naming-convention
             Authorization: `Bearer ${currentUser.token}`
           }
         });
@@ -21,6 +22,7 @@ export class JwtInterceptor implements HttpInterceptor {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 export const JwtInterceptorProvider = {
   provide: HTTP_INTERCEPTORS,
   useClass: JwtInterceptor,

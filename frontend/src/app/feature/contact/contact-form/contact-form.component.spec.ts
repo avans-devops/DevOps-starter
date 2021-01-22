@@ -1,14 +1,14 @@
-import { HttpClient, HttpHandler } from '@angular/common/http';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { ReactiveFormsModule } from '@angular/forms';
-import { RouterTestingModule } from '@angular/router/testing';
-import { IndividualConfig, ToastrService } from 'ngx-toastr';
-import { ValidationMessagesComponent, ValidationService } from 'src/app/core/components';
-import { CoreModule } from 'src/app/core/core.module';
-import { ContactService } from '../contact.service';
+import { HttpClient, HttpHandler } from "@angular/common/http";
+import { HttpClientTestingModule } from "@angular/common/http/testing";
+import { ComponentFixture, TestBed, waitForAsync } from "@angular/core/testing";
+import { ReactiveFormsModule } from "@angular/forms";
+import { RouterTestingModule } from "@angular/router/testing";
+import { IndividualConfig, ToastrService } from "ngx-toastr";
+import { ValidationMessagesComponent, ValidationService } from "src/app/core/components";
+import { CoreModule } from "src/app/core/core.module";
+import { ContactService } from "../contact.service";
 
-import { ContactFormComponent } from './contact-form.component';
+import { ContactFormComponent } from "./contact-form.component";
 
 const toastrService = {
     success: (
@@ -22,8 +22,8 @@ const toastrService = {
       override?: Partial<IndividualConfig>
     ) => {},
   };
-  
-describe('ContactFormComponent', () => {
+
+describe("ContactFormComponent", () => {
   let component: ContactFormComponent;
   let fixture: ComponentFixture<ContactFormComponent>;
 
@@ -49,7 +49,7 @@ describe('ContactFormComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

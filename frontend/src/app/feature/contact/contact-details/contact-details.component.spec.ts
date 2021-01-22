@@ -1,12 +1,12 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { ActivatedRoute } from '@angular/router';
-import { RouterTestingModule } from '@angular/router/testing';
-import { ValidationMessagesComponent } from 'src/app/core/components';
-import { CoreModule } from 'src/app/core/core.module';
+import { ComponentFixture, TestBed, waitForAsync } from "@angular/core/testing";
+import { ActivatedRoute } from "@angular/router";
+import { RouterTestingModule } from "@angular/router/testing";
+import { ValidationMessagesComponent } from "src/app/core/components";
+import { CoreModule } from "src/app/core/core.module";
 
-import { ContactDetailsComponent } from './contact-details.component';
+import { ContactDetailsComponent } from "./contact-details.component";
 
-describe('ContactDetailsComponent', () => {
+describe("ContactDetailsComponent", () => {
   let component: ContactDetailsComponent;
   let fixture: ComponentFixture<ContactDetailsComponent>;
 
@@ -21,9 +21,9 @@ describe('ContactDetailsComponent', () => {
                 provide: ActivatedRoute,
                 useValue: {
                     snapshot: {
-                        data: { 
+                        data: {
                             contactDetails: {
-                                firstName: 'Henk'
+                                firstName: "Henk"
                             }
                         }
                     }
@@ -41,7 +41,7 @@ describe('ContactDetailsComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

@@ -11,6 +11,7 @@ export class ContactDetailsComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private router: Router) {}
 
   edit(): void {
+    // eslint-disable-next-line no-underscore-dangle
     this.router.navigate(["/contacts/edit/" + this.contact._id]);
   }
   ngOnInit(): void {

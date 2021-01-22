@@ -9,9 +9,7 @@ export class ContactDetailsResolver implements Resolve<any> {
 
   resolve(route: ActivatedRouteSnapshot): any {
     return this.contactService.getById(route.paramMap.get("contactId")).pipe(
-      map((result: any) => {
-        return result;
-      })
+      map((result: any) => result)
     );
   }
 }

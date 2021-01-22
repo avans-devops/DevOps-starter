@@ -8,10 +8,10 @@ import { Router } from "@angular/router";
   styleUrls: ["./contact-list.component.scss"]
 })
 export class ContactListComponent implements OnInit {
-  SortType = SortType;
+  sortType = SortType;
   contacts: any;
   selected = [];
-  SelectionType = SelectionType;
+  selectionType = SelectionType;
 
   columns = [
     { prop: "firstName", name: "First Name",  width: 250 },
@@ -34,6 +34,7 @@ export class ContactListComponent implements OnInit {
   }
   onSelect(selected: any): void {
     console.log("Select Event", selected, this.selected);
+    // eslint-disable-next-line no-underscore-dangle
     this.router.navigate(["/contacts/details/" + this.selected[0]._id]);
   }
   ngOnInit(): void {

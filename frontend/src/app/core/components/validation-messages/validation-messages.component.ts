@@ -1,9 +1,9 @@
 import { Component, Input } from "@angular/core";
-import { FormControl } from "@angular/forms";
+import { FormControl, ValidationErrors } from "@angular/forms";
 import { ValidationService } from "./validation-messages.service";
 
 @Component({
-  selector: "validation-messages",
+  selector: "app-validation-messages",
   templateUrl: "validation-messages.component.html",
   styleUrls: ["validation-messages.component.scss"]
 })
@@ -11,7 +11,7 @@ export class ValidationMessagesComponent {
   @Input() control: FormControl;
   constructor(private validationService: ValidationService) {}
 
-  get errorMessage() {
+  get errorMessage(): any {
     for (const propertyName in this.control.errors) {
       if (
         this.control.errors.hasOwnProperty(propertyName) &&

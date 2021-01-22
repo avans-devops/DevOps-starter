@@ -1,14 +1,14 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
-import { HeaderComponent } from './header.component';
-import { UserService } from '../../services';
-import { HttpClient, HttpHandler } from '@angular/common/http';
-import { Router } from '@angular/router';
-import { LoginService } from 'src/app/feature/user/login/login.service';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { ValidationMessagesComponent } from '../../components';
+import { ComponentFixture, TestBed, waitForAsync } from "@angular/core/testing";
+import { RouterTestingModule } from "@angular/router/testing";
+import { HeaderComponent } from "./header.component";
+import { UserService } from "../../services";
+import { HttpClient, HttpHandler } from "@angular/common/http";
+import { Router } from "@angular/router";
+import { LoginService } from "src/app/feature/user/login/login.service";
+import { HttpClientTestingModule } from "@angular/common/http/testing";
+import { ValidationMessagesComponent } from "../../components";
 
-describe('HeaderComponent', () => {
+describe("HeaderComponent", () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
 
@@ -30,7 +30,7 @@ describe('HeaderComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

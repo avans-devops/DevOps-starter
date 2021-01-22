@@ -8,8 +8,8 @@ import { AlertService } from "./alert-messages.service";
   templateUrl: "alert-messages.component.html"
 })
 export class AlertComponent implements OnDestroy {
-  private subscription: Subscription;
   message: any;
+  private subscription: Subscription;
 
   constructor(private alertService: AlertService) {
     // subscribe to alert messages

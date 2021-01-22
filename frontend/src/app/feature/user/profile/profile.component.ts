@@ -23,7 +23,8 @@ export class ProfileComponent implements OnInit {
     private router: Router
   ) {}
 
-  createProfileForm() {
+  createProfileForm(): void {
+    // eslint-disable-next-line
     this.profileForm = this.formBuilder.group({
       _id: [""],
       firstName: ["", Validators.required],
@@ -32,7 +33,8 @@ export class ProfileComponent implements OnInit {
       mobile: ["", [Validators.required, Validators.minLength(10)]]
     });
   }
-  createPasswordForm() {
+  createPasswordForm(): void {
+    // eslint-disable-next-line
     this.passwordForm = this.formBuilder.group(
       {
         username: ["", Validators.required],
@@ -45,11 +47,11 @@ export class ProfileComponent implements OnInit {
     );
   }
 
-  resetProfileForm() {
+  resetProfileForm(): void {
     this.profileForm.reset();
     this.profileForm.patchValue(this.usreService.getCurrentUser());
   }
-  updateProfile() {
+  updateProfile(): void {
     this.usreService.update(this.profileForm.value).subscribe(
       (data) => {
         this.toastrService.success("Profile updated successful");
@@ -61,11 +63,12 @@ export class ProfileComponent implements OnInit {
     );
   }
 
-  resetPasswordForm() {
+  resetPasswordForm(): void {
     this.passwordForm.reset();
     this.passwordForm.get("username").patchValue(this.user.username);
   }
-  updatePassword() {
+  updatePassword(): void {
+    // eslint-disable-next-line no-underscore-dangle
     this.usreService.changePassword(this.user._id, this.passwordForm.get("password").value).subscribe(
       (data) => {
         this.toastrService.success("Profile updated successful");

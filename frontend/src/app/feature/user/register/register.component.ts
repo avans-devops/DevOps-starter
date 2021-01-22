@@ -36,6 +36,7 @@ export class RegisterComponent implements OnInit {
   }
 
   createForm(): void {
+    // eslint-disable-next-line
     this.registerForm = this.formBuilder.group(
       {
         firstName: ["", Validators.required],

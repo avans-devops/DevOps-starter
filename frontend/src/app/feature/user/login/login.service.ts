@@ -5,17 +5,15 @@ import { map } from "rxjs/operators";
 
 import { environment } from "../../../../environments/environment";
 import { Router } from "@angular/router";
+import { Observable } from "rxjs";
 
 @Injectable()
 export class LoginService {
   constructor(private http: HttpClient, private router: Router) {}
 
-  login(username: string, password: string) {
+  login(username: string, password: string): Observable<any> {
     return this.http
-      .post<any>(environment.apiEndpoint + "/user/authenticate", {
-        username: username,
-        password: password
-      })
+      .post<any>(environment.apiEndpoint + "/user/authenticate", { username, password })
       .pipe(
         map((user) => {
           // login successful if there"s a jwt token in the response

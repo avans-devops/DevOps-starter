@@ -1,13 +1,13 @@
-import { HttpClient, HttpHandler } from '@angular/common/http';
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { ReactiveFormsModule } from '@angular/forms';
-import { UserService } from 'src/app/core/services';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { ProfileComponent } from './profile.component';
-import { ValidationMessagesComponent, ValidationService } from 'src/app/core/components';
-import { IndividualConfig, ToastrService } from 'ngx-toastr';
-import { RouterTestingModule } from '@angular/router/testing';
-import { CoreModule } from 'src/app/core/core.module';
+import { HttpClient, HttpHandler } from "@angular/common/http";
+import { ComponentFixture, TestBed, waitForAsync } from "@angular/core/testing";
+import { ReactiveFormsModule } from "@angular/forms";
+import { UserService } from "src/app/core/services";
+import { HttpClientTestingModule } from "@angular/common/http/testing";
+import { ProfileComponent } from "./profile.component";
+import { ValidationMessagesComponent, ValidationService } from "src/app/core/components";
+import { IndividualConfig, ToastrService } from "ngx-toastr";
+import { RouterTestingModule } from "@angular/router/testing";
+import { CoreModule } from "src/app/core/core.module";
 
 const toastrService = {
     success: (
@@ -22,11 +22,10 @@ const toastrService = {
     ) => {},
 };
 
-const userService = {
-    getCurrentUser: () => { return { firstName: 'Henk' }}
-}
-  
-describe('ProfileComponent', () => {
+// eslint-disable-next-line
+const userService = { getCurrentUser: () => { firstName: "Henk"; } };
+
+describe("ProfileComponent", () => {
   let component: ProfileComponent;
   let fixture: ComponentFixture<ProfileComponent>;
 
@@ -39,9 +38,9 @@ describe('ProfileComponent', () => {
             CoreModule
         ],
         declarations: [ ProfileComponent, ValidationMessagesComponent ],
-        providers: [ValidationService, 
+        providers: [ValidationService,
             { provide: ToastrService, useValue: toastrService },
-            { provide: UserService, useValue: userService } 
+            { provide: UserService, useValue: userService }
         ]
     })
     .compileComponents();
@@ -53,7 +52,7 @@ describe('ProfileComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

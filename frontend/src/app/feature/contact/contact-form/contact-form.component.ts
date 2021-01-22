@@ -38,9 +38,11 @@ export class ContactFormComponent implements OnInit {
   }
   submit(): void {
     const contact = this.contactForm.value;
+    // eslint-disable-next-line no-underscore-dangle
     if (contact._id) {
       this.update(contact);
     } else {
+      // eslint-disable-next-line no-underscore-dangle
       delete contact._id;
       this.save(contact);
     }

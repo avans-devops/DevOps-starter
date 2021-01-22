@@ -1,13 +1,13 @@
-import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { ReactiveFormsModule } from '@angular/forms';
-import { RouterTestingModule } from '@angular/router/testing';
-import { IndividualConfig, ToastrService } from 'ngx-toastr';
-import { ValidationMessagesComponent, ValidationService } from 'src/app/core/components';
-import { CoreModule } from 'src/app/core/core.module';
-import { UserService } from 'src/app/core/services';
+import { HttpClientTestingModule } from "@angular/common/http/testing";
+import { ComponentFixture, TestBed, waitForAsync } from "@angular/core/testing";
+import { ReactiveFormsModule } from "@angular/forms";
+import { RouterTestingModule } from "@angular/router/testing";
+import { IndividualConfig, ToastrService } from "ngx-toastr";
+import { ValidationMessagesComponent, ValidationService } from "src/app/core/components";
+import { CoreModule } from "src/app/core/core.module";
+import { UserService } from "src/app/core/services";
 
-import { RegisterComponent } from './register.component';
+import { RegisterComponent } from "./register.component";
 
 const toastrService = {
     success: (
@@ -21,8 +21,8 @@ const toastrService = {
       override?: Partial<IndividualConfig>
     ) => {},
   };
-  
-describe('RegisterComponent', () => {
+
+describe("RegisterComponent", () => {
   let component: RegisterComponent;
   let fixture: ComponentFixture<RegisterComponent>;
 
@@ -46,7 +46,7 @@ describe('RegisterComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
