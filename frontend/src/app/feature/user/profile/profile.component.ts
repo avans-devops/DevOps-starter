@@ -16,7 +16,7 @@ export class ProfileComponent implements OnInit {
   profileForm: FormGroup;
   passwordForm: FormGroup;
   constructor(
-    private usreService: UserService,
+    private userService: UserService,
     private formBuilder: FormBuilder,
     private validationService: ValidationService,
     private toastrService: ToastrService,
@@ -49,10 +49,10 @@ export class ProfileComponent implements OnInit {
 
   resetProfileForm(): void {
     this.profileForm.reset();
-    this.profileForm.patchValue(this.usreService.getCurrentUser());
+    this.profileForm.patchValue(this.userService.getCurrentUser());
   }
   updateProfile(): void {
-    this.usreService.update(this.profileForm.value).subscribe(
+    this.userService.update(this.profileForm.value).subscribe(
       (data) => {
         this.toastrService.success("Profile updated successful");
         const user = data;
@@ -69,7 +69,7 @@ export class ProfileComponent implements OnInit {
   }
   updatePassword(): void {
     // eslint-disable-next-line no-underscore-dangle
-    this.usreService.changePassword(this.user._id, this.passwordForm.get("password").value).subscribe(
+    this.userService.changePassword(this.user._id, this.passwordForm.get("password").value).subscribe(
       (data) => {
         this.toastrService.success("Profile updated successful");
         this.router.navigate(["/login"]);
@@ -81,7 +81,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     this.createProfileForm();
     this.createPasswordForm();
-    this.user = this.usreService.getCurrentUser();
+    this.user = this.userService.getCurrentUser();
     this.profileForm.patchValue(this.user);
     this.passwordForm.get("username").patchValue(this.user.username);
   }

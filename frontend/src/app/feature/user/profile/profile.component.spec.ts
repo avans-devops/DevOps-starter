@@ -23,7 +23,7 @@ const toastrService = {
 };
 
 // eslint-disable-next-line
-const userService = { getCurrentUser: () => { firstName: "Henk"; } };
+const userService = { getCurrentUser: () => { return { firstName: "Henk" }; } };
 
 describe("ProfileComponent", () => {
   let component: ProfileComponent;
@@ -54,5 +54,10 @@ describe("ProfileComponent", () => {
 
   it("should create", () => {
     expect(component).toBeTruthy();
+  });
+
+  it("should have field password type password", () => {
+    const itemType = fixture.nativeElement.querySelector("[name='password']").getAttribute("type");
+    expect(itemType).toEqual("password");
   });
 });
